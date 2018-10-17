@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="theme.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.css" integrity="sha256-IGidWbiBOL+/w1glLnZWR5dCXpBrtQbY3XOUt2TTQOM=" crossorigin="anonymous">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-light">
+    <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar6">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar6"> <a class="navbar-brand text-primary d-none d-md-block" href="#">
+          <b> TuB Zwerge</b>
+        </a>
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"> <a class="nav-link" href="./kalender.html">Kalender</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="./meals.html">Mittagessen</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="./week.html">Letzte Woche</a> </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item"> <a class="nav-link" href="#">Log in</a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="py-5">
+            <div id="calendar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js" integrity="sha256-59IZ5dbLyByZgSsRE3Z0TjDuX7e1AiqW5bZ8Bg50dsU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js" integrity="sha256-uKe4jCg18Q60qLNG8dIei2y3ZVhcHADuEQFlpQ/hBRY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/locale-all.js" integrity="sha256-EmG1dya2dF5fANGOBHzCYtmTXO++8RJQ96jzEx/SfgY=" crossorigin="anonymous"></script>
+  <script>
+    $(function() {
+      // page is now ready, initialize the calendar...
+      $('#calendar').fullCalendar({
+        events: [
+          {
+            title  : 'Basteln',
+            start  : '2018-10-17T15:30:00',
+            allDay : false // will make the time show
+          },
+          {
+            title  : 'Geschlossen',
+            start  : '2018-10-22',
+            end    : '2018-10-26'
+          },
+          {
+            title  : 'event3',
+            start  : '2010-01-09T12:30:00',
+            allDay : false // will make the time show
+          }
+        ],
+        weekends: false,
+        header: { center: 'basicDay,month,agendaWeek,listWeek,basicWeek' },
+        views: {
+          basic: {
+            // options apply to basicWeek and basicDay views
+          },
+          agenda: {
+            // options apply to agendaWeek and agendaDay views
+          },
+          week: {
+            // options apply to basicWeek and agendaWeek views
+          },
+          day: {
+            // options apply to basicDay and agendaDay views
+          }
+      }
+        // put your options and callbacks here
+      })
+    });
+  </script>
+</body>
+
+</html>
