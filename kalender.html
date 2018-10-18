@@ -32,8 +32,12 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="py-5">
-            <a href="./TuB-Zwerge_ri7kahoho3lctt9iipibl408tc@group.calendar.google.com.ics">Download</a>
+            <a class="fa fa-download fa-2x float-right" href="./TuB-Zwerge_ri7kahoho3lctt9iipibl408tc@group.calendar.google.com.ics"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div>
             <div id="calendar"></div>
           </div>
         </div>
@@ -50,16 +54,19 @@
     $(function() {
       // page is now ready, initialize the calendar...
       $('#calendar').fullCalendar({
+        locale: 'de',
         events: [
           {
             title  : 'Basteln',
             start  : '2018-10-17T15:30:00',
-            allDay : false // will make the time show
+            allDay : false, // will make the time show
+            color : '#378006'
           },
           {
             title  : 'Geschlossen',
             start  : '2018-10-22',
-            end    : '2018-10-26'
+            end    : '2018-10-26',
+            color : '#ff6961'
           },
           {
             title  : 'event3',
@@ -68,21 +75,7 @@
           }
         ],
         weekends: false,
-        header: { center: 'basicDay,month,agendaWeek,listWeek,basicWeek' },
-        views: {
-          basic: {
-            // options apply to basicWeek and basicDay views
-          },
-          agenda: {
-            // options apply to agendaWeek and agendaDay views
-          },
-          week: {
-            // options apply to basicWeek and agendaWeek views
-          },
-          day: {
-            // options apply to basicDay and agendaDay views
-          }
-      }
+        header: { center: 'agendaWeek,month,listYear' }
         // put your options and callbacks here
       })
     });
